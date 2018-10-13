@@ -4,8 +4,8 @@ const TaskList = (props) => {
     return (
         <React.Fragment>
             <div className="form-padding" >
-                {props.task.map(data => {
-                    return <TaskItem key={data.id} task={data} />
+                {props.tasks && props.tasks.map(data => {
+                    return <TaskItem key={data.id} task={data} deleteTask={props.deleteTask} />
                 })}
             </div>
         </React.Fragment>
