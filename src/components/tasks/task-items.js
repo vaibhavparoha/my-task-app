@@ -1,16 +1,13 @@
 import React from 'react';
-import { Card, CardTitle, Button } from 'reactstrap';
-
+import { StyledCard, StyledButton, StyledTitle } from "./../styled-components";
 const TaskItem = (props) => {
     const { title, id } = props.task;
     return (
         <React.Fragment>
-            <Card className="form-padding">
-                <CardTitle>{title}</CardTitle>
-                <div>
-                    <Button color="danger" onClick={() => props.deleteTask(id)}>Delete</Button>
-                </div>
-            </Card>
+            <StyledCard>
+                <StyledButton color="danger" onClick={() => props.deleteTask(id)}>X</StyledButton>
+                <StyledTitle>{title}</StyledTitle>
+            </StyledCard>
         </React.Fragment>
 
     );

@@ -1,14 +1,10 @@
 import React from "react";
-import { Navbar, NavbarBrand } from 'reactstrap';
+import { StyledHeader } from "./../styled-components/Header";
 
 const Header = () => {
     return (
         <React.Fragment>
-            <Navbar color="light">
-                <NavbarBrand><b>My Task App</b>
-
-                </NavbarBrand>
-            </Navbar>
+            <StyledHeader>My Task App</StyledHeader>
         </React.Fragment>
     )
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Col, Button, Input } from 'reactstrap';
+import { StyledButton, StyledInput } from "./../styled-components";
 
 class TaskAdd extends Component {
     state = {
@@ -10,7 +10,8 @@ class TaskAdd extends Component {
             taskName: event.target.value
         })
     }
-    updateState = () => {
+    updateState = (e) => {
+        e.preventDefault();
         this.props.addTask(this.state.taskName);
         this.setState({
             taskName: ''
@@ -19,13 +20,8 @@ class TaskAdd extends Component {
     render() {
         return (
             <React.Fragment>
-                <Form className="form-padding" >
-                    <FormGroup row>
-                        <Col sm={6}><Input type="text" name="text" value={this.state.taskName} onChange={this.handleChanges} placeholder="Enter Task" />
-                        </Col>
-                        <Button onClick={this.updateState}  >Add </Button>
-                    </FormGroup>
-                </Form>
+                <StyledInput name="text" value={this.state.taskName} onChange={this.handleChanges} placeholder="Enter Task"></StyledInput>
+                <StyledButton onClick={this.updateState} color="primary" >Add</StyledButton>
             </React.Fragment>
 
         );
